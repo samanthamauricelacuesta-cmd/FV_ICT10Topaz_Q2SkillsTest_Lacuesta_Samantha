@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nonmetal Laboratory</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2024.3.1/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #30241b;
+            color: #e8d9bd;
+            font-family: 'DM Mono', monospace;
+        }
+
+        /* MAIN CONTAINER */
+        .page {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .notebook {
+            background: #493729;
+            border: 2px solid #98744a;
+            padding: 35px;
+        }
+
+        /* TITLE */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            color: #e6c58c;
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2, h3 {
+            color: #d5a96c;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #c2ad8d;
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+
+        .label {
+            color: #d5a96c;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        /* INPUT */
+        .input-box {
+            background: #30241b;
+            border: 1px solid #98744a;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            background: #eee2cb;
+            border: 1px solid #c49b61;
+            font-family: 'DM Mono', monospace;
+            font-size: 14px;
+            color: #30241b;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 22px;
+            background: #a6653d;
+            color: #fff0d6;
+            border: 1px solid #d5a96c;
+            font-family: 'DM Mono', monospace;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c17d4d;
+        }
+
+        /* OUTPUT */
+        .output-box {
+            background: #30241b;
+            border: 1px solid #98744a;
+            padding: 20px;
+            min-height: 200px;
+            line-height: 2;
+            overflow-wrap: anywhere;
+        }
+
+        .output-box b {
+            color: #d5a96c;
+        }
+
+        /* DIVIDER */
+        hr {
+            border: none;
+            border-top: 1px solid #98744a;
+            margin: 30px 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            color: #bba889;
+            font-size: 11px;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .notebook {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="notebook">
+
+            <p class="label">CHEMISTRY DEPARTMENT · LAB 001</p>
+
+            <h1>The Nonmetal Laboratory</h1>
+
+            <p class="subtitle">
+                An Element Identification Experiment
+            </p>
+
+            <hr>
+
+            <p class="label">SPECIMEN IDENTIFICATION</p>
+
+            <h2>Examine an Element</h2>
+
+            <p>Enter an element to check if it is a nonmetal:</p>
+
+            <div class="input-box">
+
+                <input
+                    type="text"
+                    id="nonmetal1"
+                    placeholder="Enter an element..."
+                >
+
+                <button py-click="search_element" id="checkButton">
+                    CHECK ELEMENT
+                </button>
+
+            </div>
+
+            <hr>
+
+            <p class="label">LABORATORY REPORT</p>
+
+            <h2>Showcase Result</h2>
+
+            <div class="output-box" id="planet1">
+
+                <p><b>SYMBOL:</b> <span id="code"></span></p>
+
+                <p><b>NAME:</b> <span id="name"></span></p>
+
+                <p><b>ORDER:</b> <span id="order"></span></p>
+
+                <p><b>TOTAL NONMETALS:</b> <span id="count"></span></p>
+
+            </div>
+
+            <p class="footer">
+                CHEMISTRY DEPARTMENT
+                <br>
+                NONMETAL ELEMENTS DATABASE
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- PYTHON FILE -->
+    <script type="py" src="main.py"></script>
+
+</body>
+</html>
